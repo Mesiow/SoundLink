@@ -1,32 +1,24 @@
 //
 //  SoundLinkApp.swift
-//  SoundLink
+//  SoundLink (macOS)
 //
-//  Created by Chris W on 10/26/26.
+//  Mac app: BLE central that finds the iPhone and sends piano notes.
+//  With no iPhone connected, the piano plays through the Mac instead.
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct SoundLinkApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    @State private var central = CentralManager()
+    @State private var synth = NoteSynth()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(central)
+                .environment(synth)
+                .task { synth.start() }
         }
-        .modelContainer(sharedModelContainer)
     }
 }

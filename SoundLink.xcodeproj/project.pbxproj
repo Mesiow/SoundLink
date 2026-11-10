@@ -8,12 +8,23 @@
 
 /* Begin PBXFileReference section */
 		C03C45EF308FF0F8005F84AD /* SoundLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C03C4603308FF16C005F84AD /* SoundLink iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SoundLink iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C03C45F1308FF0F8005F84AD /* SoundLink */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SoundLink;
+			sourceTree = "<group>";
+		};
+		C03C4604308FF16C005F84AD /* SoundLink iOS */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "SoundLink iOS";
+			sourceTree = "<group>";
+		};
+		C03C4620308FF200005F84AD /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,13 +37,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C03C4600308FF16C005F84AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		C03C45E6308FF0F8005F84AD = {
 			isa = PBXGroup;
 			children = (
+				C03C4620308FF200005F84AD /* Shared */,
 				C03C45F1308FF0F8005F84AD /* SoundLink */,
+				C03C4604308FF16C005F84AD /* SoundLink iOS */,
 				C03C45F0308FF0F8005F84AD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				C03C45EF308FF0F8005F84AD /* SoundLink.app */,
+				C03C4603308FF16C005F84AD /* SoundLink iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,12 +83,36 @@
 			);
 			fileSystemSynchronizedGroups = (
 				C03C45F1308FF0F8005F84AD /* SoundLink */,
+				C03C4620308FF200005F84AD /* Shared */,
 			);
 			name = SoundLink;
 			packageProductDependencies = (
 			);
 			productName = SoundLink;
 			productReference = C03C45EF308FF0F8005F84AD /* SoundLink.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C03C4602308FF16C005F84AD /* SoundLink iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C03C460D308FF16F005F84AD /* Build configuration list for PBXNativeTarget "SoundLink iOS" */;
+			buildPhases = (
+				C03C45FF308FF16C005F84AD /* Sources */,
+				C03C4600308FF16C005F84AD /* Frameworks */,
+				C03C4601308FF16C005F84AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C03C4604308FF16C005F84AD /* SoundLink iOS */,
+				C03C4620308FF200005F84AD /* Shared */,
+			);
+			name = "SoundLink iOS";
+			packageProductDependencies = (
+			);
+			productName = "SoundLink iOS";
+			productReference = C03C4603308FF16C005F84AD /* SoundLink iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -81,6 +126,9 @@
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					C03C45EE308FF0F8005F84AD = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					C03C4602308FF16C005F84AD = {
 						CreatedOnToolsVersion = 26.0;
 					};
 				};
@@ -100,6 +148,7 @@
 			projectRoot = "";
 			targets = (
 				C03C45EE308FF0F8005F84AD /* SoundLink */,
+				C03C4602308FF16C005F84AD /* SoundLink iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -112,10 +161,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C03C4601308FF16C005F84AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C03C45EB308FF0F8005F84AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C03C45FF308FF16C005F84AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -257,8 +320,10 @@
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "SoundLink uses Bluetooth to send commands to your iPhone.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -289,8 +354,10 @@
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "SoundLink uses Bluetooth to send commands to your iPhone.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +373,85 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C03C460E308FF16F005F84AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 822D8Y7G66;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "SoundLink uses Bluetooth to receive commands from your Mac.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.crispyapps.SoundLink-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C03C460F308FF16F005F84AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 822D8Y7G66;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "SoundLink uses Bluetooth to receive commands from your Mac.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.crispyapps.SoundLink-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -326,6 +472,15 @@
 			buildConfigurations = (
 				C03C45FD308FF0FA005F84AD /* Debug */,
 				C03C45FE308FF0FA005F84AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C03C460D308FF16F005F84AD /* Build configuration list for PBXNativeTarget "SoundLink iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C03C460E308FF16F005F84AD /* Debug */,
+				C03C460F308FF16F005F84AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
