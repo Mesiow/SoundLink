@@ -22,11 +22,11 @@ The Mac app shows a playable keyboard. Each key press is sent to the iPhone, whi
 
 ### GATT layout
 
-| Item | Direction | Properties |
-| --- | --- | --- |
-| SoundLink service | | |
-| Command characteristic | Mac → iPhone | write, write without response |
-| Ack characteristic | iPhone → Mac | notify |
+```
+SoundLink service
+├─ Command characteristic   Mac → iPhone   write, write without response
+└─ Ack characteristic       iPhone → Mac   notify
+```
 
 UUIDs are defined in `Shared/SoundLinkUUIDs.swift`.
 
